@@ -3,6 +3,7 @@
 namespace Esign\SaloonSentry;
 
 use Illuminate\Support\ServiceProvider;
+use Saloon\Config;
 
 class SaloonSentryServiceProvider extends ServiceProvider
 {
@@ -11,6 +12,8 @@ class SaloonSentryServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([$this->configPath() => config_path('saloon-sentry.php')], 'config');
         }
+
+        Config::globalMiddleware()->onRequest(new SentryTracingMiddleware, 'sentryTracing');
     }
 
     public function register()
