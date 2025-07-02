@@ -47,10 +47,7 @@
         "laravel": {
             "providers": [
                 "Esign\\SaloonSentry\\SaloonSentryServiceProvider"
-            ],
-            "aliases": {
-                "SaloonSentry": "Esign\\SaloonSentry\\Facades\\SaloonSentryFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
