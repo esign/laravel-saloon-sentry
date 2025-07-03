@@ -17,6 +17,6 @@ class SentryTracingMiddleware implements RequestMiddleware
             return;
         }
 
-        $sender->addMiddleware(GuzzleTracingMiddleware::trace());
+        $sender->addMiddleware(GuzzleTracingMiddleware::trace(), 'sentryTracing');
     }
 }
