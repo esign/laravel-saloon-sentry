@@ -9,6 +9,9 @@ class SaloonSentryServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Config::globalMiddleware()->onRequest(new SentryTracingMiddleware, 'sentryTracing');
+        if (! SaloonSentry::$registeredMiddleware) {
+            Config::globalMiddleware()->onRequest(new SentryTracingMiddleware, 'sentryTracing');
+            SaloonSentry::$registeredMiddleware = true;
+        }
     }
 }
