@@ -1,6 +1,6 @@
 {
     "name": "esign/laravel-saloon-sentry",
-    "description": "Adds Sentry tracing support to HTTP requests made with Saloon.",
+    "description": "Sentry tracing for Saloon HTTP requests",
     "keywords": [
         "esign",
         "saloon-sentry"

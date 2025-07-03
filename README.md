@@ -1,10 +1,11 @@
-# Adds Sentry tracing support to HTTP requests made with Saloon.
+# Sentry tracing for Saloon HTTP requests
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/esign/laravel-saloon-sentry.svg?style=flat-square)](https://packagist.org/packages/esign/laravel-saloon-sentry)
 [![Total Downloads](https://img.shields.io/packagist/dt/esign/laravel-saloon-sentry.svg?style=flat-square)](https://packagist.org/packages/esign/laravel-saloon-sentry)
 ![GitHub Actions](https://github.com/esign/laravel-saloon-sentry/actions/workflows/main.yml/badge.svg)
 
-A short intro about the package.
+Out of the box Saloon HTTP requests are not traced by Sentry.
+This package provides a middleware that automatically traces Saloon HTTP requests using Sentry's Guzzle tracing middleware.
 
 ## Installation
 
@@ -16,12 +17,8 @@ composer require esign/laravel-saloon-sentry
 
 The package will automatically register a service provider.
 
-Next up, you can publish the configuration file:
-```bash
-php artisan vendor:publish --provider="Esign\SaloonSentry\SaloonSentryServiceProvider" --tag="config"
-```
-
 ## Usage
+That's it! The package will automatically trace Saloon HTTP requests using Sentry.
 
 ### Testing
 
